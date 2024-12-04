@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body
+        {
+            padding-top: 20px;
+            height: 100vh;
+        }
+
+        form
+        {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+
+        form label
+        {
+            display: inline-block;
+            width: 100px;
+        }
+        
+        form input #name
+        {
+            width: 100%;
+            padding: 8px;
+            display: block;
+            background-color: aquamarine;
+        }
+
+/*         form button
+        {
+            width: 100%;
+            padding: 8px;
+            display: block;
+            background-color: aquamarine;
+        } */
+
+/*         form #addr2
+        {
+            margin-left: 105px;
+        } */
+
+        form input
+        {
+            display: inline-block;
+            width: 285px;
+            border: none;
+            border-bottom: 1px dotted black;
+            outline: none;
+        }
+
+/*         #email1, #email2
+        {
+            width: 130px
+        } */
+
+        form p
+        {
+            font-size: 8px;
+            margin-left: 105px;
+        }
+    </style>
+    <script>
+        // function onLoad ()
+        // {
+        //     // 객체 찾기.
+        //     const pwd = document.querySelector('#pwd');
+        //     const id =  document.querySelector('#id');
+        //     const pwd_ck = document.querySelector('#pwd_ch');
+
+        //     // 이벤트 리스너 등록 및 핸들러 처리.
+        //     pwd.addEventListener("click", () =>
+        //     {
+        //         pwd.nextSibling.textContent = "영문자, 대소문자, 특수문자, 숫자 포함 8-32자."
+        //     });
+
+        //     id.addEventListener ("blur", ()=>
+        //     {
+        //         if(id.value.lenth <= 0)
+        //         {
+        //             idText.nextSibling.textContent = "필수입력항목";
+        //         }
+        //     });
+            
+        //     pwd.addEventListener ("blur", ()=>
+        //     {
+        //         if(pwd.value.lenth <= 0)
+        //         {
+        //             pwd.nextSibling.textContent = "필수입력항목";
+        //         }
+        //     });
+            
+        //     pwd_ck.addEventListener ("blur", ()=>
+        //     {
+        //         if(pwd_ck.value.lenth <= 0)
+        //         {
+        //             pwd_ck.nextSibling.textContent = "필수입력항목";
+        //         }
+        //     });
+
+        //     // pwd_ch.addEventListener("blur", () => validate(pwd_ck));
+
+        //     // function validate (obj)
+        //     // {
+        //     //     if (obj.value.lenth <= 0)
+        //     //     obj.nextSibling.textContent = "필수입력항목";
+        //     // }
+        // }
+    </script>
+</head>
+<body>
+    <form action="/jspStudy/memberInsert" method="post">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id"><p id="idText"></p>
+        <label for="pwd" method="post">패스워드</label>
+        <input type="password" name="pwd" id="pwd"><p id="idPwd"></p>
+        <br>
+        <label for="addr1">주소</label>
+        <input type="text" name="addr1" id="addr1"> <br> <br>
+        <!-- <input type="text" name="addr2" id="addr2"> <br> <br> -->
+				<!-- <button type="subit">가입</button> -->
+        <input type="submit" value="가입하기" name="signIn"></input> 
+    </form>
+</body>
+</html>
