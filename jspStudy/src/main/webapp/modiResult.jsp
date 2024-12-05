@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>수정 완료</title>
+</head>
+<body>
+	<h2>회원정보 수정 완료!</h2>
+	<%
+		//세션의 정보는 Object타입으로 저장되어있음
+		//다운 캐스팅 : 자식클래스의 변수 = (자식클래스 타입) 부모타입의 데이터
+		String name = (String) session.getAttribute("name");
+		out.print("[" + name + "]님의 정보 수정이 완료되었습니다.");
+	%>
+	<a href="/jspStudy/loginServlet.do"></br>메인으로</a>
+</body>
+</html>
