@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/loginServlet.do")
 public class LoginServlet extends HttpServlet
 {
@@ -21,10 +20,9 @@ public class LoginServlet extends HttpServlet
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	{
-	    
 		// 1. 사용자 정보를 가져온다.
 		// 2. db 조회.(CRUD)
-		// 3. 화면출력.
+		// 3. 화면으로 보내주기.
 		PrintWriter out = null;
 	    response.setContentType("text/html;charset=UTF-8");
 	    try
