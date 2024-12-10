@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import co.kh.dev.common.DBUtility;
+import co.kh.dev.common.ConnectionPool;
 
 public class TempMemberDAO
 {
@@ -20,7 +20,21 @@ public class TempMemberDAO
 	// 전체를 DB에서 출력
 	public ArrayList<TempMemberVO> selectDB()
 	{
-		Connection con = DBUtility.dbCon();
+		// Connection con = DBUtility.dbCon();
+		
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con =
+		cp.dbCon();
+		
+		
+		// 라이브러리로 connectionpool사용
+		// Connection con = null;
+		
+		/*
+		 * try { Context contect = new InitialContext(); DataSource ds =
+		 * (DataSource)contect.lookup("java:comp/env/jdbc/myOracle"); con =
+		 * ds.getConnection(); } catch (Exception e) { e.printStackTrace(); }
+		 */
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
@@ -51,6 +65,10 @@ public class TempMemberDAO
 		{
 			// System.out.println(e.toString());
 			e.printStackTrace();
+		} finally
+		{
+			// DBUtility.dbClose(con, pstmt, rs);
+			cp.dbClose(con, pstmt, rs);
 		}
 		return tmList;
 	}
