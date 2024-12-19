@@ -3,9 +3,12 @@
 <%@page import="java.io.PrintWriter" %>
 <%@page import="javax.*" %>
 
+
+
 <%
 	response.setContentType("text/html;charset=UTF-8");
-	String loginID = (String)session.getAttribute("loginID");
+	// String loginID = (String)session.getAttribute("loginID");
+	String id = (String)session.getAttribute("id");
 %>
 <html>
 <head>
@@ -15,12 +18,12 @@
 <body>
 	<main>
 	<%
-	if (loginID != null)
+	if (id != null)
 	{
 	%>
 	<table border="1" width="300">
 		<tr>
-			<td colspan="3" align="center"><%=loginID%>님 환영합니다.</td>
+			<td colspan="3" align="center"><%=id%>님 환영합니다.</td>
 		</tr>
 		<tr>
 			<td align="center" width="100"><a href="modifyForm.jsp">정보수정</a></td>

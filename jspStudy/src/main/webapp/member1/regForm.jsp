@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Register Form</title>
+<title>[FLO]REGISTER PAGE</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="script.js"></script>
 </head>

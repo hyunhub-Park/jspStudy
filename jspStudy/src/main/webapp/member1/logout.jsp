@@ -1,6 +1,9 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <%
-session.invalidate();
+	// session.invalidate();
+	response.setContentType("text/html;charset=UTF-8");
+	// String loginID = (String)session.getAttribute("loginID");
+	String id = (String)session.getAttribute("id");
 %>
 
 <!DOCTYPE html>
@@ -11,10 +14,16 @@ session.invalidate();
 </head>
 <body>
 	<main>
-		<font size="4"> 성공적으로 로그아웃 되었습니다.
+		<h2><%=id%>님의 계정이 로그아웃되었습니다.</h2>
+		<br></br>
+<%
+session.invalidate();
+%>
+		<a href="login.jsp">로그인 페이지로 이동</a>
+		<!-- 		<font size="4"> 성공적으로 로그아웃 되었습니다.
 		<br></br>
 		<a href="login.jsp">로그인 페이지로 이동</a>
-		</font>
+		</font> -->
 	</main>
 </body>
 </html>

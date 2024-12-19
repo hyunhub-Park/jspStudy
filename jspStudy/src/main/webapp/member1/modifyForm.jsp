@@ -1,3 +1,4 @@
+<%@page import="co.kh.dev.memberone.model.StudentDAO"%>
 <%@page import="co.kh.dev.memberone.model.StudentVO"%>
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@ page import="co.kh.dev.memberone.*"%>
@@ -10,10 +11,21 @@
 <title>Update Form</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="script.js"></script>
+<%-- <script language="javascript" src="script.js" <% System.currentTimeMillis(); %>></script> --%>
 </head>
 <%
-	String loginID = (String) session.getAttribute("loginID");
-	StudentVO svo = dao.getMember(loginID);
+	/* String loginID = (String) session.getAttribute("loginID");
+	StudentVO svo = dao.getMember(loginID); */
+	
+	String id = (String) session.getAttribute("id");
+	StudentVO svo = dao.getMember(id);
+	
+/* 	String id = (String) session.getAttribute("id");
+	String pass = (String) session.getAttribute("pass");
+	StudentVO svo = new StudentVO();
+	svo.setId(id);
+	StudentDAO sdao = new StudentDAO ();
+	svo = sdao.getMember(svo); */
 %>
 <body>
 		<form name="regForm" method="post" action="modifyProc.jsp">

@@ -6,29 +6,25 @@
 <!-- 1. 사용자 정보 가져오기. -->
 <!-- 2. CRUD. -->
 <%
-request.setCharacterEncoding("UTF-8");
-String dong = request.getParameter("dong");
-String check = request.getParameter("check");	// n으로 옴.
-
-ArrayList<ZipCodeVO> zipList = null;
-
-if (check.equals("n") == true)
-{
-// VO 호출.
-ZipCodeVO zvo = new ZipCodeVO();
-zvo.setDong(dong);
-
-// DAO 호출. useBeans로 가져와도 됨.
-StudentDAO sdao = new StudentDAO();
-zipList = sdao.selectZipCode(zvo);
+	request.setCharacterEncoding("UTF-8");
+	String dong = request.getParameter("dong");
+	String check = request.getParameter("check");	// n으로 옴.
 	
-}
-
+	ArrayList<ZipCodeVO> zipList = null;
+	
+	if (check.equals("n") == true)
+	{
+		// VO 호출.
+		ZipCodeVO zvo = new ZipCodeVO();
+		zvo.setDong(dong);
+		
+		// DAO 호출. useBeans로 가져와도 됨.
+		StudentDAO sdao = new StudentDAO();
+		zipList = sdao.selectZipCode(zvo);
+	}
 %>
 
 <!-- 3. 화면 설계. -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,12 +46,14 @@ zipList = sdao.selectZipCode(zvo);
 			</table>
 		</form>
 		<table>
-			<%
-			if (check.equals("n")) {
-			%>
-			<%
-			if (zipList.isEmpty()) {
-			%>
+<%
+	if (check.equals("n"))
+	{
+%>
+<%
+	if (zipList.isEmpty())
+	{
+%>
 			<tr>
 				<td align="center"><br />검색된 결과가 없습니다.</td>
 			</tr>
@@ -64,14 +62,14 @@ zipList = sdao.selectZipCode(zvo);
 			<tr>
 				<td align="center"><a href="javascript:this.close();">닫기</a></td>
 			</tr>
-			<%
-			} else
-			{
-			%>
+<%
+	} else
+	{
+%>
 			<tr>
 				<td align="center"><br /> ※검색 후, 아래 우편번호를 클릭하면 자동으로 입력됩니다.</td>
 			</tr>
-			<%
+<%
 			for (ZipCodeVO p : zipList)
 			{
 				String tempZipcode = p.getZipcode();
@@ -81,23 +79,21 @@ zipList = sdao.selectZipCode(zvo);
 				String tempBunji = p.getBunji();
 				if (tempBunji == null)
 					tempBunji = " ";
-			%>
+%>
 			<tr>
 				<td>
 <%-- 				<a href="javascript:sendAddress('<%=tempZipcode%>','<%=tempSido%>'
 ,'<%=tempGugun%>','<%=tempDong%>','<%=tempBunji%>')">
 						<%=tempZipcode%>&nbsp;<%=tempSido%>&nbsp;<%=tempGugun%> &nbsp;<%=tempDong%>&nbsp;<%=tempBunji%></a><br> --%>
-						<a href="javascript:sendAddress('<%=tempZipcode%>','<%=tempSido%>'
-,'<%=tempGugun%>','<%=tempDong%>','<%=tempBunji%>')">
+						<a href="javascript:sendAddress('<%=tempZipcode%>','<%=tempSido%>','<%=tempGugun%>','<%=tempDong%>','<%=tempBunji%>')">
 						<%=p.toString()%></a><br>
-						
-						
-					<%
+<%
 				} // end of for
-				} // end of zipList.isEmpty() else
-					%> <%
- }	// end of check.equals("n")
- %></td>
+	} // end of zipList.isEmpty() else
+%>
+<%
+ 	}	// end of check.equals("n")
+%></td>
 			</tr>
 <!-- 			<tr>
 				<td align="center"><a href="javascript:this.close();">닫기</a></td>
@@ -106,21 +102,6 @@ zipList = sdao.selectZipCode(zvo);
 	</main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <%-- <%@page import="java.util.ArrayList"%>
