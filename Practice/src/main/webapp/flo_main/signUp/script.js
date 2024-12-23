@@ -126,10 +126,10 @@ function inputCheck() {	// 회원가입 폼 패턴검색.
 
 function updateCheck()
 {
-	if (document.signUp.signUpForm.pwd.value == "")
+	if (document.signUpForm.pwd.value == "")
 	{
 		alert("비밀번호를 입력해 주세요.");
-		document.signUp.signUpForm.pwd.focus();
+		document.signUpForm.pwd.focus();
 		return;
 	}
 	if (document.signUpForm.repass.value == "")

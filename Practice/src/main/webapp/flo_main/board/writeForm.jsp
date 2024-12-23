@@ -1,4 +1,4 @@
-<!-- DB에 BOARD테이블 생성 잊지 않기!!!!!!!! -->
+<!-- ✅✅✅✅✅BOARD테이블 생성 잊지 않기!!!!!!!!✅✅✅✅✅ -->
 
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@ include file="view/color.jsp"%>

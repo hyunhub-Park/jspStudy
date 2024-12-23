@@ -1,38 +1,40 @@
 <%@page contentType="text/html; charset=UTF-8"%>
-<%@page import="java.*" %>
-<%@page import="java.io.PrintWriter" %>
-<%@page import="javax.*" %>
-    
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<title>회원탈퇴</title>
+</head>
+<script language="javascript">
+	function begin()
+	{
+		document.myForm.pwd.focus();
+	}
+	
+	function checkIt() {
+		if (!document.myForm.pwd.value)
+		{
+			alert("비밀번호를 입력하지 않았습니다");
+			document.myForm.pwd.focus();
+			return false;
+		}
+	}
+</script>
 <script src="https://kit.fontawesome.com/b551008ea2.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
-    
-    
-    <title>가볍게, 나답게 FLO</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b551008ea2.js" crossorigin="anonymous"></script>
-    <script src="../carousel.js"></script>
     <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="style.css">
 
-</head>
-<body onload="carousel();">
-    <div class="menu">
+<div class="menu">
         <ul class="menu_contents_left">
             <li><a href="main.jsp" class="logo">FLO</a></li>    <!--폰트 스타일 적용하기.-->
-            <li><a href="writeForm.jsp">게시판</a></li>
-            <li><a href="main.jsp">보관함</a></li>
-            <li><a href="main.jsp">이용권</a></li>
+            <li><a href="board.jsp">게시판</a></li>
+            <li><a href="Flo_Main.html">보관함</a></li>
+            <li><a href="Flo_Main.html">이용권</a></li>
         </ul>
         
         <ul class="menu_contents_center">
@@ -46,49 +48,39 @@
             <li><a href="signUp.jsp">회원가입</a></li>
         </ul>
     </div>
-
-    <!-- 회전목마 구간. -->
-    <div class="slideShow">
-        <!-- slideShow안에 3명의 자식. -->
-         <!-- onmouseenter="" 안씀. -->
-        <div class="slideShow_slides">
-            <a href="#"><img src="../img/1.png" alt="slide-1"></a>
-            <a href="#"><img src="../img/2.png" alt="slide-2"></a>
-            <a href="#"><img src="../img/1.png" alt="slide-1"></a>
-            <a href="#"><img src="../img/2.png" alt="slide-2"></a>
-        </div>
-
-        <!-- 아이콘. -->
-        <div class="slideShow_nav">
-            <a href="#" class="pre"><i class="fa-solid fa-chevron-left fa-2xs"></i></i></a>
-            <a href="#" class="next"><i class="fa-solid fa-chevron-right fa-2xs"></i></i></a>
-        </div>
-
-        <div class="slideShow_indicator">
-            <a href="#" class="active"><i class="fa-solid fa-circle fa-2xs"></i></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-        </div>
-    </div>
     
     <br>
-    <br>
-    
-        <div id="testing"><img src="../img/main.png" alt="main" id="ip"></div>
-        
-        
-    <div id="fixed_icons_bar"></div>
-
-    <div id="fixed_icons">
+		<br>
+<body onload="begin()">
+	<form name="myForm" method="post" action="deleteProc.jsp" onsubmit="return checkIt()" id="lastTwo">
+		<table width="260" border="1" align="center">
+			<tr>
+				<td colspan="2" align="center"><b>회원 탈퇴</b></td>
+			</tr>
+			<tr>
+				<td width="150"><b>비밀번호입력</b></td>
+				<td width="110"><input type="password" name="pwd" size="15"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+				<input type="submit" value="회원탈퇴">
+				<input type="button" value="취 소" onclick="javascript:window.location='signIn.jsp'"></td>
+			</tr>
+		</table>		
+	</form>
+	
+			  <div id="fixed_icons_bar"></div>
+			    <div id="fixed_icons">
         <i class="fa-solid fa-play fa-2x" id="play_button" style="color: #333333;"></i>
         <i class="fa-solid fa-forward-step fa-2x" id="forward_button" style="color: #333333;"></i>
         <i class="fa-solid fa-backward-step fa-2x" id="backward_button" style="color: #333333;"></i>
         <!-- <a href="main.html"><span id=up_fixed><i class="fa-solid fa-arrow-up fa-2x"></i></span></a>
         <a href="main.html"><span id=settings_fixed><i class="fa-solid fa-gear fa-2x"></i></span></a> -->
     </div>
-    
-     <br>
+	
+	
+</body>
+	 <br>
      <hr id="footer_top">
 
     <footer>
@@ -128,5 +120,4 @@
             </ul>
         </div>
     </footer>
-</body>
 </html>

@@ -75,6 +75,7 @@ public final class ConnectionPool
 
 		// 2. db.properties 파일 에서 id, pw 가져오기
 		String filePath = "C:\\dev\\eclipseWorkspace\\Practice\\src\\main\\java\\com\\flo\\common\\db.properties";
+		
 		Properties pt = new Properties();
 		try
 		{

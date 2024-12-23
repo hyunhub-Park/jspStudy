@@ -10,7 +10,7 @@ public class MemberVO
     private String phone3;
     private String email;
     private String zipCode;
-    private String adddress1;
+    private String address1;
     private String address2;
 	
     
@@ -22,7 +22,7 @@ public class MemberVO
 
 
 	public MemberVO(String id, String pwd, String name, String phone1, String phone2, String phone3, String email,
-			String zipCode, String adddress1, String address2) {
+			String zipCode, String address1, String address2) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
@@ -32,7 +32,7 @@ public class MemberVO
 		this.phone3 = phone3;
 		this.email = email;
 		this.zipCode = zipCode;
-		this.adddress1 = adddress1;
+		this.address1 = address1;
 		this.address2 = address2;
 	}
 
@@ -134,14 +134,14 @@ public class MemberVO
 
 
 
-	public String getAdddress1() {
-		return adddress1;
+	public String getAddress1() {
+		return address1;
 	}
 
 
 
-	public void setAdddress1(String adddress1) {
-		this.adddress1 = adddress1;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
 
 

@@ -1,9 +1,26 @@
+<%@page import="com.flo.model.BoardDAO"%>
+<%@page import="com.flo.model.BoardVO"%>
 <%@page contentType="text/html; charset=UTF-8"%>
- <!DOCTYPE html>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+	int num = Integer.parseInt(request.getParameter("num"));
+	String pageNum = request.getParameter("pageNum");
+	BoardVO bvo = new BoardVO();
+	bvo.setNum(num);
+%>
+<%
+	try
+	{
+		BoardDAO bdao = BoardDAO.getInstance();
+		BoardVO article = bdao.selectBoardOneDB(bvo);
+%>
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>BOARD</title>
+<title>게시판</title>
+<link href="style.css" rel="stylesheet" type="text/css">
 <link href="../style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="../style.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
@@ -15,7 +32,11 @@
 <link rel="stylesheet" href="signUp.css">
     <link rel="stylesheet" href="../style.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="Bscript.js?timestamp=<%= System.currentTimeMillis() %>"></script>
+<script language="JavaScript" src="Bscript.js?timestamp=<%= System.currentTimeMillis() %>"></script>
 </head>
+<body>
 
 <div class="menu">
         <ul class="menu_contents_left">
@@ -36,9 +57,49 @@
             <li><a href="signUp.jsp">회원가입</a></li>
         </ul>
     </div>
-         <br>
-         
-         	<div id="fixed_icons_bar"></div>
+             <br>
+
+		<form method="post" name="writeform" action="updateProc.jsp?pageNum=<%=pageNum%>" onsubmit="return writeSave()">
+		<input type="hidden" name="num" value="<%=article.getNum()%>">
+			<table width="400" border="1" cellspacing="0" cellpadding="0"
+				align="center">
+				<tr>
+					<td width="70" align="center">이 름</td>
+					<td align="left" width="330"><input type="text" size="10"
+						maxlength="10" name="writer" value="<%=article.getWriter()%>">
+						<%-- <input type="hidden" name="num" value="<%=article.getNum()%>"> --%></td>
+				</tr>
+				<tr>
+					<td width="70" align="center">제 목</td>
+					<td align="left" width="330"><input type="text" size="40"
+						maxlength="50" name="subject" value="<%=article.getSubject()%>"></td>
+				</tr>
+				<tr>
+					<td width="70" align="center">Email</td>
+					<td align="left" width="330"><input type="text" size="40"
+						maxlength="30" name="email" value="<%=article.getEmail()%>"></td>
+				</tr>
+				<tr>
+					<td width="70" align="center">내 용</td>
+					<td align="left" width="330"><textarea name="content"
+							rows="13" cols="40">
+<%=article.getContent()%></textarea></td>
+				</tr>
+				<tr>
+					<td width="70" align="center">비밀번호</td>
+					<td align="left" width="330"><input type="password" size="8"
+						maxlength="12" name="pass"></td>
+				</tr>
+				<tr>
+					<td colspan=2 align="center">
+					<input type="submit" value="글수정">
+					<input type="reset" value="다시작성">
+					<input type="button" value="목록보기" onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+					</td>
+				</tr>
+			</table>
+			
+				<div id="fixed_icons_bar"></div>
     
     <div id="fixed_icons">
         <i class="fa-solid fa-play fa-2x" id="play_button" style="color: #333333;"></i>
@@ -47,18 +108,9 @@
         <!-- <a href="main.html"><span id=up_fixed><i class="fa-solid fa-arrow-up fa-2x"></i></span></a>
         <a href="main.html"><span id=settings_fixed><i class="fa-solid fa-gear fa-2x"></i></span></a> -->
     </div>
-
-<body>
-	<aside>
-	<input type="button" value="자유게시판[TEST]" onClick="window.location='writeForm.jsp'">
-	<input type="button" value="1:1 문의[TEST]" onClick="window.location='writeForm.jsp'">
-	<input type="button" value="글쓰기[TEST]" onClick="window.location='writeForm.jsp'">
-	<input type="button" value="글쓰기[TEST]" onClick="window.location='writeForm.jsp'">
-	<input type="button" value="글쓰기[TEST]" onClick="window.location='writeForm.jsp'">
-	</aside>
-</body>
-
- <br>
+		</form>
+		
+		<br>
      <br>
      <hr id="footer_top">
 
@@ -99,4 +151,10 @@
             </ul>
         </div>
     </footer>
+<%
+	} catch (Exception e)
+	{
+	}
+%>
+</body>
 </html>

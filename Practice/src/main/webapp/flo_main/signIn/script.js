@@ -126,10 +126,10 @@ function inputCheck() {	// 회원가입 폼 패턴검색.
 
 function updateCheck()
 {
-	if (document.signUp.signUpForm.pwd.value == "")
+	if (document.signUpForm.pwd.value == "")
 	{
 		alert("비밀번호를 입력해 주세요.");
-		document.signUp.signUpForm.pwd.focus();
+		document.signUpForm.pwd.focus();
 		return;
 	}
 	if (document.signUpForm.repass.value == "")
@@ -137,6 +137,7 @@ function updateCheck()
 		alert("비밀번호를 확인해 주세요");
 		document.signUpForm.repass.focus();
 		return;
+
 	}
 	if (document.signUpForm.pwd.value != document.signUpForm.repass.value)
 	{
@@ -176,13 +177,13 @@ function updateCheck()
 		&& atPos + 1 < dotPos && dotPos + 1 < eMailSize);
 	else {
 		alert('E-mail주소 형식이 잘못되었습니다.\n\r다시 입력해 주세요!');
-		document.signUpForm.email.focus();
+		document.regForm.email.focus();
 		return;
 
 	}
-	if (document.signUpForm.zipcode.value == "") {
+	if (document.signUpForm.zipCode.value == "") {
 		alert("우편번호를 입력해 주세요.");
-		document.signUpForm.zipcode.focus();
+		document.signUpForm.zipCode.focus();
 		return;
 	}
 	if (document.signUpForm.address1.value == "") {

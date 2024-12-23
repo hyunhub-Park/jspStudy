@@ -1,8 +1,11 @@
 <%@page contentType="text/html; charset=UTF-8"%>
-<%@page import="java.*" %>
-<%@page import="java.io.PrintWriter" %>
-<%@page import="javax.*" %>
-    
+<%
+	// session.invalidate();
+	response.setContentType("text/html;charset=UTF-8");
+	// String loginID = (String)session.getAttribute("loginID");
+	String id = (String)session.getAttribute("id");
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,8 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/b551008ea2.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/b551008ea2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
     
@@ -26,13 +29,13 @@
         <link rel="stylesheet" href="style.css">
 
 </head>
-<body onload="carousel();">
-    <div class="menu">
+
+<div class="menu">
         <ul class="menu_contents_left">
             <li><a href="main.jsp" class="logo">FLO</a></li>    <!--폰트 스타일 적용하기.-->
             <li><a href="writeForm.jsp">게시판</a></li>
-            <li><a href="main.jsp">보관함</a></li>
-            <li><a href="main.jsp">이용권</a></li>
+            <li><a href="Flo_Main.html">보관함</a></li>
+            <li><a href="Flo_Main.html">이용권</a></li>
         </ul>
         
         <ul class="menu_contents_center">
@@ -46,40 +49,28 @@
             <li><a href="signUp.jsp">회원가입</a></li>
         </ul>
     </div>
-
-    <!-- 회전목마 구간. -->
-    <div class="slideShow">
-        <!-- slideShow안에 3명의 자식. -->
-         <!-- onmouseenter="" 안씀. -->
-        <div class="slideShow_slides">
-            <a href="#"><img src="../img/1.png" alt="slide-1"></a>
-            <a href="#"><img src="../img/2.png" alt="slide-2"></a>
-            <a href="#"><img src="../img/1.png" alt="slide-1"></a>
-            <a href="#"><img src="../img/2.png" alt="slide-2"></a>
-        </div>
-
-        <!-- 아이콘. -->
-        <div class="slideShow_nav">
-            <a href="#" class="pre"><i class="fa-solid fa-chevron-left fa-2xs"></i></i></a>
-            <a href="#" class="next"><i class="fa-solid fa-chevron-right fa-2xs"></i></i></a>
-        </div>
-
-        <div class="slideShow_indicator">
-            <a href="#" class="active"><i class="fa-solid fa-circle fa-2xs"></i></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-            <a href="#"><i class="fa-solid fa-circle fa-2xs"></i></a>
-        </div>
-    </div>
     
     <br>
-    <br>
+	<main align="center">
+	<br>
+	<br>
+	<br>
+		<h2><%=id%>님의 계정이 로그아웃되었습니다.</h2>
+		<br></br>
+<%
+session.invalidate();
+%>
+		<a href="signIn.jsp" id="moveLogIn">로그인 페이지로 이동</a>
+		<!-- 		<font size="4"> 성공적으로 로그아웃 되었습니다.
+		<br></br>
+		<a href="login.jsp">로그인 페이지로 이동</a>
+		</font> -->
+		<br>
+		<br>
+		<br>
+	</main>
+	  	<div id="fixed_icons_bar"></div>
     
-        <div id="testing"><img src="../img/main.png" alt="main" id="ip"></div>
-        
-        
-    <div id="fixed_icons_bar"></div>
-
     <div id="fixed_icons">
         <i class="fa-solid fa-play fa-2x" id="play_button" style="color: #333333;"></i>
         <i class="fa-solid fa-forward-step fa-2x" id="forward_button" style="color: #333333;"></i>
@@ -87,10 +78,11 @@
         <!-- <a href="main.html"><span id=up_fixed><i class="fa-solid fa-arrow-up fa-2x"></i></span></a>
         <a href="main.html"><span id=settings_fixed><i class="fa-solid fa-gear fa-2x"></i></span></a> -->
     </div>
-    
+
+     <br>
      <br>
      <hr id="footer_top">
-
+</body>
     <footer>
         <div id="first">
             <ul id="first_ul">
@@ -128,5 +120,4 @@
             </ul>
         </div>
     </footer>
-</body>
 </html>
