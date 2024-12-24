@@ -66,7 +66,7 @@
 		<table width="400" border="1" cellpadding="0" cellspacing="0" align="center">
 			<tr>
 				<td align="right" colspan="2">
-				<a href="list.jsp">글목록</a>
+				<a href="board.jsp">글목록</a>
 				</td>
 			</tr>
 			<tr>

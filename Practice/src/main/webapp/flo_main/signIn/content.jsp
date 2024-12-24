@@ -96,7 +96,7 @@ try {
 						  onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
              &nbsp;&nbsp;&nbsp;&nbsp; 
 						<input type="button" value="글목록"	
-						onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+						onclick="document.location.href='board.jsp?pageNum=<%=pageNum%>'">
 						
 						
 						

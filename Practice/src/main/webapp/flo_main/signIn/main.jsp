@@ -30,7 +30,7 @@
     <div class="menu">
         <ul class="menu_contents_left">
             <li><a href="main.jsp" class="logo">FLO</a></li>    <!--폰트 스타일 적용하기.-->
-            <li><a href="writeForm.jsp">게시판</a></li>
+            <li><a href="board.jsp">게시판</a></li>
             <li><a href="main.jsp">보관함</a></li>
             <li><a href="main.jsp">이용권</a></li>
         </ul>

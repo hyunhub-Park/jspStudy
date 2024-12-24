@@ -1,108 +1,77 @@
 @charset "UTF-8";
 
-BODY
+*
 {
-	FONT-SIZE: 9pt;
-	COLOR: black;
-	LINE-HEIGHT: 160%;
-	FONT-FAMILY: 굴림, verdana, tahoma
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
-TD
+body
 {
-	FONT-SIZE: 9pt;
-	COLOR: black;
-	LINE-HEIGHT: 160%;
-	FONT-FAMILY: 굴림, verdana, tahoma
+    margin-top: 50px;
+    padding-top: 20px;
+    height: 100vh;
+    font-family: "IBM Plex Sans KR", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-SELECT
+form
 {
-	FONT-SIZE: 9pt;
-	COLOR: black;
-	LINE-HEIGHT: 160%;
-	FONT-FAMILY: 굴림, verdana, tahoma
+    width: 500px;
+    margin: 0 auto;
+    padding: 60px;
+    border: 1px solid #d9d9d9;
 }
 
-DIV
+.id,
+.pwd
 {
-	FONT-SIZE: 9pt;
-	COLOR: black;
-	LINE-HEIGHT: 160%;
-	FONT-FAMILY: 굴림, verdana, tahoma
+    width: 100%;
+    text-decoration: underline #d9d9d9;
 }
 
-FORM
+.signInBtn
 {
-	FONT-SIZE: 9pt;
-	COLOR: black;
-	LINE-HEIGHT: 160%;
-	FONT-FAMILY: 굴림, verdana, tahoma
+    background-color: #d9d9ff;
+    font-weight: bold;
+    height: 50px;
 }
 
-TEXTAREA
+#signIn
 {
-	BORDER-RIGHT: 1px solid #999999;
-	BORDER-TOP: 1px solid #999999;
-	FONT-SIZE: 9pt;
-	BORDER-LEFT: 1px solid #999999;
-	COLOR: BLACK;
-	BORDER-BOTTOM: 1px solid #999999;
-	FONT-FAMILY: 굴림, verdana;
-	BACKGROUND-COLOR: white
+    border: none;
+    background-color:  #d9d9ff;
+    color: white;
+    font-weight: bold;
+    font-size: 12pt;
+    line-height: 50px;
 }
 
-INPUT
+#underLine
 {
-	BORDER-RIGHT: 1px solid #999999;
-	BORDER-TOP: 1px solid #999999;
-	FONT-SIZE: 9pt;
-	BORDER-LEFT: 1px solid #999999;
-	COLOR: BLACK;
-	BORDER-BOTTOM: 1px solid #999999;
-	FONT-FAMILY: 굴림, verdana;
-	HEIGHT: 19px;
-	BACKGROUND-COLOR: white
+    background-color: #cfd0cf;
+    border: 0px;
+    height: 1px;
 }
 
-	MAIN
-	{
-		width: 80%;
-		margin: 0 auto;
-		text-align: center;
-		display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-	}
-	
-/* 	div.center
-	{
-		width: 80%;
-		margin: 0 auto;
-		text-align: center;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-content: center;
-	} */
-
-A:link
+#email,
+#pwd
 {
-	text-decoration: none;
-	color: #696969
+    border: none;
+    width: 100%;
+    height: 45px;
+    font-size: 10pt;
 }
 
-A:hover
+input::placeholder
 {
-	text-decoration: yes;
-	color: #66CCFF
+    color: #cfd0cf;
 }
 
-A:visited
+span
 {
-	text-decoration: none;
-	color: #330066
+    font-size: 10pt;
+    margin-left: -295px;
 }

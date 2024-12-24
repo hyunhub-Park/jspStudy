@@ -269,7 +269,7 @@ footer ul
 #moveLogIn
 {
 	text-decoration: none;
-		color: white;
+	color: white;
     background-color: #484848;
     border: solid 1px #484848;
     font-size: 10pt;
@@ -293,4 +293,103 @@ footer ul
 	width: 800px;
 	height: 460px;
 	margin-left: 250px;
+}
+
+.board_top
+{
+    border: 1px solid black;
+    width: 500px;
+    margin-left: 400px;
+}
+
+.board_top ul li
+{
+    width: 100px;
+    list-style: none;
+    display: inline-block;
+    font-size: 10pt;
+    margin: 15px;
+    border: solid 1px #484848;
+    background: #484848;
+    border-radius: 50px;
+    padding: 7px;
+}
+
+.board_top a
+{
+    text-decoration: none;
+    color: white;
+}
+
+aside
+{
+    border: solid 1px gray;
+    width: 200px;
+    height: 500px;
+    margin: 40px;
+}
+
+
+aside ul
+{
+    list-style: none;
+    margin: 50px 40px auto 40px
+}
+
+aside ul li
+{
+    margin-bottom: 15px;
+}
+
+aside ul li a
+{
+    text-decoration: none;
+    color: #484848;
+    font-weight: bold;
+}
+
+aside ul li a:hover
+{
+    text-decoration: underline;
+    color: #484848;
+}
+
+.board_center
+{
+    width: 200px;
+    height: 200px;
+    border: #303030 1px solid;
+    margin-left: 400px;
+    margin-top: -550px;
+}
+
+#listTr img
+{
+	width: 1px;
+	height: 1px;
+}
+
+#bt
+{
+	width: 800px;
+	margin-top: -600px;
+	margin-bottom: 400px;
+	margin-left: 200px;
+}
+
+#board_list
+{
+	margin-top: -1500px;
+	margin-bottom: 700px;
+	margin-left: 400px;
+}
+
+div.board_left
+{
+	width: 300px;
+}
+
+.board_body
+{
+	height: 200px;
 }
